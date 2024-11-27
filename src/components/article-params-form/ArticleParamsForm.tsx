@@ -28,16 +28,16 @@ export const ArticleParamsForm = ({
 	currentArticleState,
 	setCurrentArticleState,
 }: ArticleParamsFormProps) => {
-	const [open, setOpen] = useState(false);
-	const ref = useRef<HTMLElement | null>(null);
+	const [isOpen, setIsOpen] = useState(false);
+	const sidebarRef = useRef<HTMLElement | null>(null);
 
 	useClickOutside({
-		isOpen: open,
-		onClose: () => setOpen(false),
-		rootRef: ref,
+		isOpen: isOpen,
+		onClose: () => setIsOpen(false),
+		rootRef: sidebarRef,
 	});
 	const toggleSidebar = useCallback(() => {
-		setOpen((prevOpen) => !prevOpen);
+		setIsOpen((prevOpen) => !prevOpen);
 	}, []);
 	const [formsState, setFormsState] =
 		useState<ArticleStateType>(currentArticleState);
@@ -62,10 +62,10 @@ export const ArticleParamsForm = ({
 	};
 	return (
 		<>
-			<ArrowButton isOpen={open} onClick={toggleSidebar} />
+			<ArrowButton isOpen={isOpen} onClick={toggleSidebar} />
 			<aside
-				ref={ref}
-				className={clsx(styles.container, open && styles.container_open)}>
+				ref={sidebarRef}
+				className={clsx(styles.container, isOpen && styles.container_open)}>
 				<form className={styles.form} onSubmit={onSubmit} onReset={onReset}>
 					<Text uppercase={true} weight={800} size={31} align='center'>
 						Задайте параметры
