@@ -1,6 +1,8 @@
 # Одностраничный блог с возможностью кастомизации стилей
 
-## Данные
+![alt text](<Снимок экрана 2025-01-27 184148.png>)
+
+## Данные:
 
 [Макет проекта](https://www.figma.com/file/FEeiiGLOsE7ktXbPpBxYoD/Custom-dropdown?type=design&node-id=0%3A1&mode=design&t=eXRJnWC6Xsuw0qR4-1)
 
